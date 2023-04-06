@@ -13,6 +13,8 @@ public class DustTrail : MonoBehaviour
     }
 
     void OnCollisionExit2D(Collision2D other) {
-        dustEffect.Stop();
+        if (other.collider.tag == "Ground") {
+            dustEffect.Stop();
+        }
     }
 }
